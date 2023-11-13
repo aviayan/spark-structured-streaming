@@ -1,0 +1,4 @@
+df.selectExpr("CAST(value AS STRING)")
+mySchema = StructType([StructField("text", StringType(), True)])
+values = df.select(from_json(df.value.cast("string"), mySchema).alias("tweet"))
+df1 = values.select("tweet.*")
