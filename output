@@ -1,0 +1,3 @@
+query = words.writeStream.queryName("all_tweets") \
+        .outputMode("append").format("console") \
+        .start()
